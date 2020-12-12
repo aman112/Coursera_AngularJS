@@ -1,9 +1,15 @@
 <!doctype html>
-<html>
+<html ng-app="myFirstApp">
 <head>
-<title>Angular JS Coursera Course</title>
+	<meta charset="utf-8">
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<title>Angular JS Coursera Course</title>
 </head>
-<body>
-<h1>Coursera Angular JS starter Page</h1>
+<body ng-controller="myFirstController">
+	<div>
+	<h1>Coursera Angular JS starter Page</h1>
+	{{firstElement}}
+	</div>
 </body>
 </html>
