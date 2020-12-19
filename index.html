@@ -6,10 +6,30 @@
 	<script src="js/app.js"></script>
 	<title>Angular JS Coursera Course</title>
 </head>
-<body ng-controller="myFirstController">
+<body ng-controller="myParentController">
+	<div ng-controller="myChildController" >
+		<h1>Child1: </h1>
+	</div>
+	<div ng-controller="myChildController1 as child1" >
+		<h1>Child1: {{child1.value}}</h1>
+	</div>
+	<div ng-controller="myChildController2 as child2">
+		<h1>Child2: {{child2.value}}</h1>
+	</div>
+	
+	<div ng-controller="shoppingList as addItemArr">
+		<input type="text" ng-model="addItemArr.itemName" placeholder="Item Name"/>
+		<input type="text" ng-model="addItemArr.itemQuantity" placeholder="Item Quantity"/>
+		<button ng-click="addItemArr.additems()">Add Items</button>
 	<div>
-	<h1>Coursera Angular JS starter Page</h1>
-	{{firstElement}}
+	
+	<div ng-controller="ShoppingListShow as showList">
+		<ol>
+			<li ng-repeat="item in showList.Items">
+				{{item.itemName}}-{{item.itemQuantity}}
+			</li>
+		</ol>
+		<div ng-show="{{showList.total}}">Total: {{showList.total}}</div>
 	</div>
 </body>
 </html>

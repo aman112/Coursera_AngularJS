@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="secondModuleAssignment">
+	<head>
+		<meta charset="utf-8">
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		<title>Shopping List Check Off</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
+		<style>
+		  .emptyMessage {
+			font-weight: bold;
+			color: red;
+			font-size: 1.2em;
+		  }
+		  li {
+			margin-bottom: 7px;
+			font-size: 1.2em;
+		  }
+		  li > button {
+			margin-left: 6px;
+		  }
+		  button > span {
+			color: green;
+		  }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Shopping List Check Off</h1>
+			<div class="row">
+				<div class="col-md-6"  ng-controller="List1Controller as list1">
+					<h3>To Buy:</h3>
+					<ol ng-if="list1.items.length>0">
+						<li ng-repeat="item in list1.items">
+						Buy {{item.quantity}} {{item.name}} <button class="btn btn-default" ng-click="list1.Itembought($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button>
+						</li>
+					</ol>
+					<div class="emptyMessage" ng-if="list1.items.length==0">Everything is bought!</div>
+				</div>
+				<div class="col-md-6"  ng-controller="List2Controller as list2">
+					<h3>Already Bought:</h3>
+					<ol ng-if="list2.items.length>0">
+						<li ng-repeat="item in list2.items">
+						Bought {{item.quantity}} {{item.name}}
+						</li>
+					</ol>
+					<div class="emptyMessage" ng-if="list2.items.length==0">Nothing bought yet!</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
