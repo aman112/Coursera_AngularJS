@@ -1,20 +1,9 @@
 (function(){
 	var App=angular.module('secondModuleAssignment',[]);
-	App.controller('MainController',Controller);
 	App.controller('List1Controller',List1Controller);
 	App.controller('List2Controller',List2Controller);
 	App.service('ShoppingListAddService',ShoppingListAddService);
 	App.service('BoughtListAddService',BoughtListAddService);
-	
-	function Controller($scope,ShoppingListAddService){
-		$scope.name="";
-		$scope.quantity="";
-		$scope.addItems=function(){
-			ShoppingListAddService.addItems($scope.name,$scope.quantity);
-			$scope.name="";
-			$scope.quantity="";
-		}
-	}
 	
 	List1Controller.$inject=['ShoppingListAddService','BoughtListAddService'];
 	function List1Controller(ShoppingListAddService,BoughtListAddService){
