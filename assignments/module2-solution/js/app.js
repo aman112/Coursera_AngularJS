@@ -20,11 +20,11 @@
 	function List1Controller(ShoppingListAddService,BoughtListAddService){
 		var list1=this;
 		list1.items=[
-			{"name":"item 1","quantity":"10"},
-			{"name":"item 2","quantity":"5"},
-			{"name":"item 3","quantity":"20"},
-			{"name":"item 4","quantity":"1"},
-			{"name":"item 5","quantity":"15"}
+			{"name":"item1","quantity":"10"},
+			{"name":"item2","quantity":"5"},
+			{"name":"item3","quantity":"20"},
+			{"name":"item4","quantity":"1"},
+			{"name":"item5","quantity":"15"}
 		];
 		list1.Itembought=function(index){
 			BoughtListAddService.addItems(list1.items[index].name,list1.items[index].quantity);
