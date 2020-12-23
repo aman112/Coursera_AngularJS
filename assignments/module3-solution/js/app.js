@@ -49,7 +49,11 @@
 			templateUrl:"directives/foundItems.html",
 			controller:"NarrowItDownController",
 			controllerAs:"narrowList",
-			bindToController: true
+			bindToController: true,
+			scope:{
+				found:"<",
+				onRemove:"&"
+			}
 		};
 		return ddo;
 	}
