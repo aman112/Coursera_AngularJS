@@ -3,6 +3,28 @@
 	
 	App.controller('myParentController',ParentController);
 	App.controller('myChildController',ChildController);
+	App.component('testComponent',{
+		templateUrl:"testComponent.html",
+		controller:TestComponentController
+	});
+	
+	TestComponentController.$inject=['$scope','$element']
+	function TestComponentController($scope,$element){
+		var $ctrl=this;
+		console.log("Component Controller instantiated...");
+		$ctrl.$onInit=function(){
+			console.log("Component Controller on Init...");
+		}
+		$ctrl.onChanges=function(changeObj){
+			console.log("change obj", changeObj);
+		}
+		$ctrl.doCheck=function(){
+			console.log("Component Controller do Check called...");
+		}
+		$ctrl.onDestroy=function(){
+			console.log("Component controller on Destroy..");
+		}
+	}
 	function ParentController($scope){
 		$scope.ParentValue="1";
 		$scope.pc=this;
