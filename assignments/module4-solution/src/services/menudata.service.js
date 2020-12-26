@@ -8,6 +8,9 @@ function MenuDataService($http){
 		return $http({
 			method:"GET",
 			url:"https://davids-restaurant.herokuapp.com/categories.json"
+		})
+		.then(function(data){
+			console.log(data);
 		});
 	}
 	service.getItemsForCategory=function(categoryShortName){
@@ -17,7 +20,6 @@ function MenuDataService($http){
 		})
 		.then(function(data){
 			console.log(data);
-		})
-		;
+		});
 	}
 }
