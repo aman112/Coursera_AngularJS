@@ -1,0 +1,9 @@
+(function(){
+	angular.module('MenuApp')
+	.component('menuCategories',{
+		templateUrl:"src/templates/menuCategories.template.html",
+		bindings:{
+			category:"<"
+		}
+	});
+})();
