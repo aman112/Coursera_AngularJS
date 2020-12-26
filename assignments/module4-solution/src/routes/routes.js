@@ -14,15 +14,15 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       templateUrl: 'src/templates/home.template.html'
     })
 
-    .state('categories', {
+    .state('menuCategories', {
       url: '/menu-categories',
       templateUrl: 'src/templates/categories.template.html',
-	  controller:'MenuCategoriesController as menuCategories',
-	  resolve:{
+	  controller:'MenuCategoriesController as menuCategories'
+	  /* resolve:{
 		categories:['MenuDataService',function(){
 			return MenuDataService.getAllCategories();
 		}]
-	  }
+	  } */
     });/* 
 	.state('categories.items', {
       url: '/menu-item-detail',
