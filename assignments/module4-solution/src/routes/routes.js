@@ -17,15 +17,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     .state('menuCategories', {
       url: '/menu-categories',
       templateUrl: 'src/templates/categories.template.html',
-	  controller:'MenuCategoriesController as menuCategories'
+	  controller:'MenuCategoriesController as menuCategories',
 	  resolve:{
 		categories:['MenuDataService',function(MenuDataService){
 			return MenuDataService.getAllCategories();
 		}]
 	  }
-    });/* 
-	.state('categories.items', {
-      url: '/menu-item-detail',
-      templateUrl: 'src/items.template.html'
-    }); */
+    });
 }
