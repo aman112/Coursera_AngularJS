@@ -29,7 +29,8 @@ function MenuDataService($q,$http){
 		var deferred=$q.defer();
 		return $http({
 			method:"GET",
-			url:"https://davids-restaurant.herokuapp.com/menu_items.json?category="+categoryShortName
+			url:"https://davids-restaurant.herokuapp.com/categories.json"
+			//url:"https://davids-restaurant.herokuapp.com/menu_items.json?category="+categoryShortName
 		})
 		.then(function(output){
 			if(undefined!==output){
