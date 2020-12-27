@@ -6,7 +6,9 @@ function ItemDetailController($stateParams,categories){
 	var itemDetail=this;
 	itemDetail.categories=categories;
 	var item = categories[$stateParams.itemId];
-	itemDetail.name = item.name;
-	itemDetail.quantity = item.quantity;
-	itemDetail.description = item.description;
+	if(undefined!==item){
+		itemDetail.name = item.name;
+		itemDetail.quantity = item.quantity;
+		itemDetail.description = item.description;
+	}
 }
