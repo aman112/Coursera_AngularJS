@@ -1,0 +1,9 @@
+(function(){
+	angular.module('MenuApp')
+	.component('itemDetail',{
+		templateUrl:"src/templates/itemDetail.component.html",
+		bindings:{
+			items:"<"
+		}
+	});
+})();
