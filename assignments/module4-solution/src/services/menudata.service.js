@@ -5,7 +5,14 @@ function MenuDataService($q,$http){
 	var service=this;
 	
 	service.getAllCategories=function(){
-		var deferred=$q.defer();
+		return $http({
+			method:"GET",
+			url:"https://davids-restaurant.herokuapp.com/categories.json"
+		})
+		.then(function(output){
+			return (output.data);
+		});
+		/* var deferred=$q.defer();
 		$http({
 			method:"GET",
 			url:"https://davids-restaurant.herokuapp.com/categories.json"
@@ -23,10 +30,17 @@ function MenuDataService($q,$http){
 				return deferred.reject("Error Occurred...");
 			}
 		});
-		return deferred.promise;
+		return deferred.promise; */
 	}
 	service.getItemsForCategory=function(categoryShortName){
-		var deferred=$q.defer();
+		return $http({
+			method:"GET",
+			url:"https://davids-restaurant.herokuapp.com/menu_items.json?category="+categoryShortName
+		})
+		.then(function(output){
+			return (output.data.menu_items);
+		});
+		/* var deferred=$q.defer();
 		$http({
 			method:"GET",
 			url:"https://davids-restaurant.herokuapp.com/menu_items.json?category="+categoryShortName
@@ -44,6 +58,6 @@ function MenuDataService($q,$http){
 				return deferred.reject("Error Occurred...");
 			}
 		});
-		return deferred.promise;
+		return deferred.promise; */
 	}
 }
