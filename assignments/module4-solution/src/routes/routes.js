@@ -29,6 +29,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 	  controller:'ItemDetailController as itemDetail',
 	  params:{
 		  itemId:null,
+		  name:null,
 		  short_name:null
 	  },
 	  resolve:{
