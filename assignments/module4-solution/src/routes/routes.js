@@ -32,7 +32,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 		  short_name:null
 	  },
 	  resolve:{
-		  item:['MenuDataService','$stateParams',function(MenuDataService,$stateParams){
+		  items:['MenuDataService','$stateParams',function(MenuDataService,$stateParams){
 			  return MenuDataService.getItemsForCategory($stateParams.short_name);
 		  }]
 	  }

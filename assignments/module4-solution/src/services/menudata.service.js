@@ -34,7 +34,7 @@ function MenuDataService($q,$http){
 		.then(function(output){
 			if(undefined!==output){
 				if(undefined!==output.status && output.status==200){
-					return deferred.resolve(output.data);
+					return deferred.resolve(output.data.menu_items);
 				}
 				else{
 					return deferred.reject("Error Occurred...");
