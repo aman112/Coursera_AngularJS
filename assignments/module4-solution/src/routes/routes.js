@@ -33,8 +33,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 	  },
 	  resolve:{
 		  items:['MenuDataService','$stateParams',function(MenuDataService,$stateParams){
-			  return MenuDataService.getAllCategories();
-			  //return MenuDataService.getItemsForCategory($stateParams.short_name);
+			  return MenuDataService.getItemsForCategory($stateParams.short_name);
 		  }]
 	  }
     });
