@@ -24,7 +24,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 	  }
     })
 	.state('categories.items', {
-      url: '/item-detail/{{itemId}}',
+      url: '/item-detail/{itemId}',
       templateUrl: 'src/templates/itemDetail.template.html',
 	  controller:'ItemDetailController as itemDetail'
     });
