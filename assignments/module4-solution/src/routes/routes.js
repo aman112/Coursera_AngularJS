@@ -26,6 +26,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 	.state('categories.items', {
       url: '/item-detail/{itemId}',
       templateUrl: 'src/templates/itemDetail.template.html',
-	  controller:'ItemDetailController as itemDetail'
+	  controller:'ItemDetailController as itemDetail',
+	  resolve:{
+		  item:['MenuDataService','$stateParams',function(MenuDataService,$stateParams){
+			  return MenuDataService.getItemsForCategory($stateParams.short_name);
+		  }]
+	  }
     });
 }
