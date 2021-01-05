@@ -15,16 +15,10 @@ function SignUpController($http,ApiPath) {
 		  url:ApiPath+"/menu_items/"+$ctrl.user.favDishName+".json"
 	  })
 	  .then(function(response){
-		  console.log(response);
-		  if(response.status=="500" && response.error==="Internal Server Error"){
-			  $ctrl.itemFound=false;
-		  }
-		  else{
-			  console.log("service add called...");
-			  $ctrl.itemFound=true;
-		  }
+		console.log("service add called...",$ctrl.user);
+		$ctrl.itemFound=true;
 	  },function(error){
-		  console.log(error);
+		  $ctrl.itemFound=false;
 	  });
 	}
 }
