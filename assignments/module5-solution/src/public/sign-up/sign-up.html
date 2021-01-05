@@ -20,9 +20,12 @@
             Phone must be in the format ###-###-####.
           </span>
 		<br/>
+        Favourite Dish#: <input type="text" name="favDishName" ng-model="signUpCtrl.user.favDishName"> <span ng-if="!signUpCtrl.itemFound">No such menu Item Exists!</span>
+		<br/>
         <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
           <div style="margin-top: 10px;">
             Form valid? {{ signUpForm.$valid }}
           </div>
 	</form>
+	<div ng-if="signUpCtrl.itemFound">Your information has been saved</div>
 </div>
