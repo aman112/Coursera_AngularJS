@@ -23,6 +23,8 @@ function SignUpController($http,ApiPath) {
 			  console.log("service add called...");
 			  $ctrl.itemFound=true;
 		  }
+	  },function(error){
+		  console.log(error);
 	  });
 	}
 }
