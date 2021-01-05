@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['$http'];
-function SignUpController($http) {
+SignUpController.$inject = ['$http','ApiPath'];
+function SignUpController($http,ApiPath) {
   var $ctrl = this;
   
   $ctrl.submit=function(){
