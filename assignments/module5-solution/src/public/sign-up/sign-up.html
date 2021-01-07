@@ -1,13 +1,18 @@
 <div class="container">
 	<h2 class="text-center">Enter Your Details!!</h2>
 	<form name="signUpForm" novalidate>
-		Name: <input type="text" name="username" placeholder="Pick a username" ng-model="signUpCtrl.user.username" required minlength="4" ng-maxlength="10">
-          {{ signUpCtrl.user.username }}
-          <span ng-if="(signUpForm.username.$error.minlength || signUpForm.username.$error.required) && signUpForm.username.$touched">
-            Username must be at least 4 characters long
+		First Name: <input type="text" name="firstname" ng-model="signUpCtrl.user.firstname" required minlength="4" ng-maxlength="10">
+          {{ signUpCtrl.user.firstname }}
+          <span ng-if="(signUpForm.firstname.$error.minlength || signUpForm.firstname.$error.required) && signUpForm.firstname.$touched">
+            First Name must be at least 4 characters long
           </span>
-          <span ng-if="signUpForm.username.$error.maxlength && signUpForm.username.$touched">
-            Username must not be longer than 10 characters
+          <span ng-if="signUpForm.firstname.$error.maxlength && signUpForm.firstname.$touched">
+            First Name must not be longer than 10 characters
+          </span>
+		<br/>
+        Last Name: <input type="text" name="lastname" ng-model="signUpCtrl.user.lastname" required> {{ signUpCtrl.user.lastname }}
+          <span ng-if="signUpForm.lastname.$error.required && signUpForm.lastname.$touched">
+            Last Name is required
           </span>
 		<br/>
         Email: <input type="email" name="email" placeholder="Email" ng-model="signUpCtrl.user.email" required>
@@ -23,9 +28,6 @@
         Favourite Dish#: <input type="text" name="favDishName" ng-model="signUpCtrl.user.favDishName"> <span ng-if="signUpCtrl.itemFetchCalled && !signUpCtrl.itemFound">No such menu Item Exists!</span>
 		<br/>
         <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
-          <div style="margin-top: 10px;">
-            Form valid? {{ signUpForm.$valid }}
-          </div>
 	</form>
 	<div ng-if="signUpCtrl.itemFound">Your information has been saved</div>
 </div>
