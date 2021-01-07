@@ -10,7 +10,7 @@ body {
 }
 
 inputBox{
-	background-color: #61122f;
+	background-color: #61122f !important;
 }
 
 /** HEADER **/
