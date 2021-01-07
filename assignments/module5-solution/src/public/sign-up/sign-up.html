@@ -1,7 +1,7 @@
 <div class="container">
 	<h2 class="text-center">Enter Your Details!!</h2>
 	<form name="signUpForm" novalidate>
-		First Name: <input type="text" name="firstname" ng-model="signUpCtrl.user.firstname" required minlength="4" ng-maxlength="10">
+		First Name: <input class="InputBox" type="text" name="firstname" ng-model="signUpCtrl.user.firstname" required minlength="4" ng-maxlength="10">
           {{ signUpCtrl.user.firstname }}
           <span ng-if="(signUpForm.firstname.$error.minlength || signUpForm.firstname.$error.required) && signUpForm.firstname.$touched">
             First Name must be at least 4 characters long
@@ -10,24 +10,24 @@
             First Name must not be longer than 10 characters
           </span>
 		<br/>
-        Last Name: <input type="text" name="lastname" ng-model="signUpCtrl.user.lastname" required> {{ signUpCtrl.user.lastname }}
+        Last Name: <input class="InputBox" type="text" name="lastname" ng-model="signUpCtrl.user.lastname" required> {{ signUpCtrl.user.lastname }}
           <span ng-if="signUpForm.lastname.$error.required && signUpForm.lastname.$touched">
             Last Name is required
           </span>
 		<br/>
-        Email: <input type="email" name="email" placeholder="Email" ng-model="signUpCtrl.user.email" required>
+        Email: <input class="InputBox" type="email" name="email" placeholder="Email" ng-model="signUpCtrl.user.email" required>
           <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
             Must be a valid email address: handle@domain format
           </span>
         <br/>
-        Phone: <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signUpCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+        Phone: <input class="InputBox" type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signUpCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
           <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
 		<br/>
-        Favourite Dish#: <input type="text" name="favDishName" ng-model="signUpCtrl.user.favDishName"> <span ng-if="signUpCtrl.itemFetchCalled && !signUpCtrl.itemFound">No such menu Item Exists!</span>
+        Favourite Dish#: <input class="InputBox" type="text" name="favDishName" ng-model="signUpCtrl.user.favDishName"> <span ng-if="signUpCtrl.itemFetchCalled && !signUpCtrl.itemFound">No such menu Item Exists!</span>
 		<br/>
-        <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
+        <button class="InputBox" ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
 	</form>
 	<div ng-if="signUpCtrl.itemFound">Your information has been saved</div>
 </div>
