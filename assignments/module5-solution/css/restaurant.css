@@ -9,12 +9,8 @@ body {
   margin-top: 60px;
 }
 
-inputBox{
-	/* color:black !important;
-	background-color: #61122f !important; */
-}
 input{
-    background-color:#666 !important;
+    background-color:#61122f !important;
     color: #FFF !important;
 }
 
