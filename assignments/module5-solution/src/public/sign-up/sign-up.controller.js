@@ -9,9 +9,9 @@ function SignUpController(ApiPath,MenuService,RegUserInfoService) {
 	var $ctrl = this;
 	$ctrl.itemFetchCalled=false;
 	$ctrl.submit=function(){
-		$ctrl.itemFetchCalled=true;
 		MenuService.getMenuItemsByShortName($ctrl.user.favDishName)
 		.then(function(response){
+			$ctrl.itemFetchCalled=true;
 			if(!RegUserInfoService.checkInfo($ctrl.user.email)){
 				$ctrl.user.menuItem=response.data;
 				RegUserInfoService.savePreferences($ctrl.user);
@@ -23,6 +23,7 @@ function SignUpController(ApiPath,MenuService,RegUserInfoService) {
 				alert("This email Id is already been registered.");
 			}
 		},function(error){
+			$ctrl.itemFetchCalled=true;
 			$ctrl.itemFound=false;
 		});
 	}
