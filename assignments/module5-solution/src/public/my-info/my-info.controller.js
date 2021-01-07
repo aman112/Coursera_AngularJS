@@ -12,9 +12,5 @@ function MyInfoController(RegUserInfoService,userInfo) {
 	$ctrl.userInfo=userInfo;
 	$ctrl.userExists=true;
   }
-  
-  $ctrl.submit=function(){
-	  
-	}
 }
 })();
