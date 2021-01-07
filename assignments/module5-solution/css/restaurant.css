@@ -10,8 +10,8 @@ body {
 }
 
 input{
-    background-color:#000 !important;
-    color: #FFF !important;
+    //background-color:#000 !important;
+    color: #000 !important;
 }
 
 /** HEADER **/
