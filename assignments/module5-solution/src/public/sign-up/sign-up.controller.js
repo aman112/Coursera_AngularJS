@@ -22,6 +22,7 @@ function SignUpController($http,ApiPath,MenuService,RegUserInfoService) {
 					RegUserInfoService.savePreferences($ctrl.user);
 					$ctrl.itemFound=true;
 					$ctrl.user={};
+					$ctrl.itemFetchCalled=false;
 				}
 				else{
 					alert("This email Id is already been registered.");
