@@ -20,7 +20,7 @@ function SignUpController(ApiPath,MenuService,RegUserInfoService) {
 				//$ctrl.itemFetchCalled=false;
 			}
 			else{
-				alert("This email Id is already been registered.");
+				alert("This email Id has already been registered.");
 			}
 		},function(error){
 			$ctrl.itemFetchCalled=true;

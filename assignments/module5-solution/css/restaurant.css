@@ -10,8 +10,12 @@ body {
 }
 
 inputBox{
-	color:black !important;
-	background-color: #61122f !important;
+	/* color:black !important;
+	background-color: #61122f !important; */
+}
+input{
+    background-color:#666 !important;
+    color: #FFF !important;
 }
 
 /** HEADER **/
