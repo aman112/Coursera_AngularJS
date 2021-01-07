@@ -1,0 +1,15 @@
+<div class="container">
+	<div ng-if="!myInfoCtrl.userExists">
+		Not Signed Up Yet. <span><a ui-sref="public.signup">Sign up Now!</a></span>
+	</div>
+	<div ng-if="myInfoCtrl.userExists"> 
+		<h2 class="text-center">Registered Info!!</h2>
+		<section>
+			<p>Name: {{myInfoCtrl.userInfo.username}}<p>
+			<p>Email: {{myInfoCtrl.userInfo.email}}<p>
+			<p>Phone: {{myInfoCtrl.userInfo.phone}}<p>
+			<p>Fav Dish: {{myInfoCtrl.userInfo.menuitem.name}}<p>
+			<p>Fav Dish Description: {{myInfoCtrl.userInfo.menuitem.description}}<p>
+		</section>
+	</div>
+</div>

@@ -4,19 +4,26 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['$http','ApiPath'];
-function SignUpController($http,ApiPath) {
+SignUpController.$inject = ['$http','ApiPath','MenuService','RegUserInfoService'];
+function SignUpController($http,ApiPath,MenuService,RegUserInfoService) {
   var $ctrl = this;
   
   $ctrl.submit=function(){
-	alert('Submit called...');
-	  $http({
+	  /* $http({
 		  method:"GET",
 		  url:ApiPath+"/menu_items/"+$ctrl.user.favDishName+".json"
-	  })
+	  }) */
+	  MenuService.getMenuItemsByShortName($ctrl.user.favDishName)
 	  .then(function(response){
-		console.log("service add called...",$ctrl.user);
-		$ctrl.itemFound=true;
+		if(!RegUserInfoService.checkInfo($ctrl.user.email)){
+			$ctrl.user.menuItem=response.data;
+			RegUserInfoService.savePreferences($ctrl.user);
+			$ctrl.itemFound=true;
+			$ctrl.user={};
+		}
+		else{
+			alert("This email Id is already been registered.");
+		}
 	  },function(error){
 		  $ctrl.itemFound=false;
 	  });
